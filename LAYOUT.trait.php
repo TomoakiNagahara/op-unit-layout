@@ -122,4 +122,14 @@ trait UNIT_LAYOUT
 		//	...
 		Env::Set('layout', [$key=>$value]);
 	}
+
+	/** Get/Set Layout name.
+	 *
+	 * @created   2022-09-30
+	 * @return    string
+	 */
+	static function Name()
+	{
+		return Config::Get('layout')['name'];
+	}
 }
