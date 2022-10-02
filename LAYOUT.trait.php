@@ -79,9 +79,11 @@ trait UNIT_LAYOUT
 	 * String  : Layout name.
 	 * </pre>
 	 *
+	 * @deprecated
 	 * @created  2019-10-11
 	 * @param    boolean|string  $value
 	 */
+	/*
 	static function __LAYOUT_CONFIG($value=null)
 	{
 		//	Get
@@ -122,6 +124,7 @@ trait UNIT_LAYOUT
 		//	...
 		Env::Set('layout', [$key=>$value]);
 	}
+	*/
 
 	/** Get/Set Layout name.
 	 *
