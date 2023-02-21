@@ -1,21 +1,56 @@
 Unit of Layout for onepiece-framework
 ===
 
-# Config Option
+# File location
 
- * execute
- * name
+ The Layout is placed in the following directory.
+
+```
+asset:/layout/
+```
+
+ The Layout uses a common template files.
+
+```
+asset:/template/layout/
+```
+
+# Config
+
+ The config file is in the following path: `asset:/config/layout.php`
+
+```php:layout.php
+return [
+  'execute' =>  true,
+  'name'    => 'white',
+];
+```
+
+## Options
+
+| key name | type    | value |
+| ---      | ---     | ---   |
+| execute  | boolean | `true` does Layout. |
+| name     | string  | The name of the Layout to use. |
 
 # Usage
 
- Turn off layout.
+## Turn off Layout
 
-```
-Config::Set('layout', ['execute' => false]);
+```php
+//  Standard
+OP()->Config('layout', ['execute' => false]);
+
+//  Shortcut
+OP()->Layout(false);
 ```
 
- Dynamic layout change.
+## Dynamic Layout change
 
-```
-Config::Set('layout', ['name' => 'layout_name']);
+```php
+//  Standard
+OP()->Config('layout', ['name' => 'Layout_name']);
+
+//  Shortcut
+OP()->Layout('Layout_name');
 ```
