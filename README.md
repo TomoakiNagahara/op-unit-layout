@@ -32,6 +32,7 @@ return [
 | ---      | ---     | ---   |
 | execute  | boolean | `true` does Layout. |
 | name     | string  | The name of the Layout to use. |
+| darkmode | boolean | The darkmode setting. OS settings are reflected. |
 
 # Usage
 
