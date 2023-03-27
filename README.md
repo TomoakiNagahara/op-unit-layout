@@ -55,3 +55,7 @@ OP()->Config('layout', ['name' => 'Layout_name']);
 //  Shortcut
 OP()->Layout('Layout_name');
 ```
+
+# Technical information
+
+In case of `Config('layout')['execute'] === true`, Execute to `asset:/layout/{$layout_name}/index.php`.
