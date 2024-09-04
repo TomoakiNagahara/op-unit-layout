@@ -58,6 +58,7 @@ class Layout implements IF_UNIT, IF_LAYOUT
 	}
 	*/
 	use OP_CORE, OP_UNIT;
+	use \OP\OP_CI;
 
 	/** Automatically.
 	 *
