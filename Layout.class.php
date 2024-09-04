@@ -1,8 +1,10 @@
 <?php
 /** op-unit-layout:/Layout.class.php
  *
- * @creation  2017-05-09
- * @updation  2019-02-23 Separate from NewWorld.
+ * @created   2017-05-09  Separated file.
+ * @updated   2019-02-23  Separated from the NewWorld.
+ * @moved     2019-11-21  Change to trait from class.
+ * @moved     2024-09-04  Return to class from trait.
  * @version   1.0
  * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
@@ -27,11 +29,18 @@ use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
 use OP\IF_LAYOUT;
+use OP\Env;
+use OP\Config;
+use Exception;
+use function OP\RootPath;
+use function OP\Template;
+use function OP\CompressPath;
 
 /** Layout
  *
- * @created   2017-02-14
- * @updated   2019-11-21  Separate to UNIT_LAYOUT trait.
+ * @created   2017-02-14  Independent from NewWorld.
+ * @moved     2019-11-21  Separate to UNIT_LAYOUT trait.
+ * @moved     2024-09-04  Returned to class from trait.
  * @updated   2024-09-04  Implemented IF_LAYOUT
  * @version   1.0
  * @package   op-unit-layout
@@ -49,4 +58,47 @@ class Layout implements IF_UNIT, IF_LAYOUT
 	}
 	*/
 	use OP_CORE, OP_UNIT;
+
+	/** Automatically.
+	 *
+	 * @created    2024-09-04
+	 */
+	static function Auto()
+	{
+		//	...
+		$config = Config::Get('layout');
+
+		//	...
+		if( empty($config['execute']) ){
+			Content();
+			return;
+		}
+
+		//	...
+		if( 'text/html' !== Env::Mime() ){
+			Content();
+			return;
+		}
+
+		//	...
+		$path = RootPath('asset') . 'layout/';
+
+		//	...
+		if(!file_exists( $path ) ){
+			throw new Exception("Layout directory has not been exists. ($path)");
+		};
+
+		//	...
+		if(!file_exists( $path = $path.$config['name'] ) ){
+			throw new Exception("Layout has not been exists. ($path)");
+		}
+
+		//	...
+		if(!file_exists( $path = $path.'/index.php' ) ){
+			throw new Exception("Layout controller has not been exists. ($path)");
+		};
+
+		//	...
+		Template(CompressPath($path));
+	}
 }
