@@ -26,17 +26,19 @@ namespace OP\UNIT;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
+use OP\IF_LAYOUT;
 
 /** Layout
  *
  * @created   2017-02-14
  * @updated   2019-11-21  Separate to UNIT_LAYOUT trait.
+ * @updated   2024-09-04  Implemented IF_LAYOUT
  * @version   1.0
  * @package   op-unit-layout
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-class Layout implements IF_UNIT
+class Layout implements IF_UNIT, IF_LAYOUT
 {
 	/** trait.
 	 *
