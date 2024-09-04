@@ -101,4 +101,15 @@ class Layout implements IF_UNIT, IF_LAYOUT
 		//	...
 		Template(CompressPath($path));
 	}
+
+	/** Get/Set Layout name.
+	 *
+	 * @created   2022-09-30
+	 * @moved     2024-09-04  Return to class from trait.
+	 * @return    string
+	 */
+	static function Name()
+	{
+		return Config::Get('layout')['name'];
+	}
 }
