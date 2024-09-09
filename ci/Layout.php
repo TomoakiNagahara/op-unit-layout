@@ -22,7 +22,7 @@ namespace OP;
 $ci = OP::Unit('CI')::Config();
 
 //	Template
-$path   = dirname(__DIR__)."/template/ci.txt";
+$path   = OP()->MetaPath('asset:/unit/layout/template/ci.txt');
 $method = 'Template';
 $args   = ['ci.txt'];
 $result = "Notice: This file is not located in the template directory. ({$path})";
