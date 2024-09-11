@@ -71,7 +71,7 @@ class Layout implements IF_UNIT, IF_LAYOUT
 
 		//	...
 		if( empty($config['execute']) ){
-			Content();
+			OP()->Content();
 			return;
 		}
 
