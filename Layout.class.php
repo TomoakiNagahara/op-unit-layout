@@ -70,14 +70,8 @@ class Layout implements IF_UNIT, IF_LAYOUT
 		$config = Config::Get('layout');
 
 		//	...
-		if( empty($config['execute']) ){
+		if( empty($config['execute']) or 'text/html' !== Env::Mime() ){
 			OP()->Content();
-			return;
-		}
-
-		//	...
-		if( 'text/html' !== Env::Mime() ){
-			Content();
 			return;
 		}
 
