@@ -105,6 +105,6 @@ class Layout implements IF_UNIT, IF_LAYOUT
 	 */
 	static function Name()
 	{
-		return Config::Get('layout')['name'];
+		return Config::Get('layout')['name'] ?? null;
 	}
 }
