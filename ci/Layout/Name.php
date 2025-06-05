@@ -4,7 +4,7 @@
  * @created    2025-06-05
  * @version    1.0
  * @package    op-unit-layout
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All right reserved.
  */
 
