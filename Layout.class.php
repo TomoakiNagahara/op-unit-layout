@@ -26,7 +26,6 @@ namespace OP\UNIT;
  */
 use OP\OP_CORE;
 use OP\OP_UNIT;
-use OP\IF_UNIT;
 use OP\IF_LAYOUT;
 use OP\Env;
 use OP\Config;
@@ -46,7 +45,7 @@ use function OP\CompressPath;
  * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All right reserved.
  */
-class Layout implements IF_UNIT, IF_LAYOUT
+class Layout implements IF_LAYOUT
 {
 	/**	trait.
 	 *
