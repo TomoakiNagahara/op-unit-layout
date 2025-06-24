@@ -29,7 +29,6 @@ use OP\OP_CI;
 use OP\IF_LAYOUT;
 use OP\Env;
 use OP\Config;
-use Exception;
 use function OP\RootPath;
 use function OP\Template;
 use function OP\CompressPath;
@@ -73,17 +72,17 @@ class Layout implements IF_LAYOUT
 
 		//	...
 		if(!file_exists( $path ) ){
-			throw new Exception("Layout directory has not been exists. ($path)");
+			throw new \Exception("Layout directory has not been exists: $path");
 		};
 
 		//	...
 		if(!file_exists( $path = $path.$config['name'] ) ){
-			throw new Exception("Layout has not been exists. ($path)");
+			throw new \Exception("Layout has not been exists: $path");
 		}
 
 		//	...
 		if(!file_exists( $path = $path.'/index.php' ) ){
-			throw new Exception("Layout controller has not been exists. ($path)");
+			throw new \Exception("Layout controller has not been exists: $path");
 		};
 
 		//	...
