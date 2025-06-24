@@ -25,7 +25,6 @@ namespace OP\UNIT;
  *
  */
 use OP\OP_CORE;
-use OP\OP_UNIT;
 use OP\IF_LAYOUT;
 use OP\Env;
 use OP\Config;
@@ -50,7 +49,7 @@ class Layout implements IF_LAYOUT
 	/**	trait.
 	 *
 	 */
-	use OP_CORE, OP_UNIT;
+	use OP_CORE;
 	use \OP\OP_CI;
 
 	/**	Automatically.
