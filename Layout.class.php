@@ -67,7 +67,7 @@ class Layout implements IF_LAYOUT
 		}
 
 		//	...
-		$path = RootPath('asset') . 'layout/';
+		$path = _ROOT_ASSET_ . '/layout/';
 
 		//	...
 		if(!file_exists( $path ) ){
