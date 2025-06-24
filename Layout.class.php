@@ -27,7 +27,6 @@ namespace OP\UNIT;
 use OP\OP_CORE;
 use OP\OP_CI;
 use OP\IF_LAYOUT;
-use OP\Env;
 use OP\Config;
 use function OP\RootPath;
 use function OP\Template;
@@ -62,7 +61,7 @@ class Layout implements IF_LAYOUT
 		$config = Config::Get('layout');
 
 		//	...
-		if( empty($config['execute']) or 'text/html' !== Env::Mime() ){
+		if( empty($config['execute']) or 'text/html' !== OP()->MIME() ){
 			OP()->Content();
 			return;
 		}
