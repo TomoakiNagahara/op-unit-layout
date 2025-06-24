@@ -1,28 +1,27 @@
 <?php
-/** op-unit-layout:/Layout.class.php
+/**	op-unit-layout:/Layout.class.php
  *
- * @created   2017-05-09  Separated file.
- * @updated   2019-02-23  Separated from the NewWorld.
- * @moved     2019-11-21  Change to trait from class.
- * @moved     2024-09-04  Return to class from trait.
- * @version   1.0
- * @package   op-unit-layout
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @created    2017-05-09  Separated file.
+ * @updated    2019-02-23  Separated from the NewWorld.
+ * @moved      2019-11-21  Change to trait from class.
+ * @moved      2024-09-04  Return to class from trait.
+ * @package    op-unit-layout
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All right reserved.
  */
 
-/** Declare strict
+/**	Declare strict
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	namespace
  *
  * @created   2018-04-13
  */
 namespace OP\UNIT;
 
-/** Used class.
+/**	Used class.
  *
  */
 use OP\OP_CORE;
@@ -36,31 +35,26 @@ use function OP\RootPath;
 use function OP\Template;
 use function OP\CompressPath;
 
-/** Layout
+/**	Layout
  *
- * @created   2017-02-14  Independent from NewWorld.
- * @moved     2019-11-21  Separate to UNIT_LAYOUT trait.
- * @moved     2024-09-04  Returned to class from trait.
- * @updated   2024-09-04  Implemented IF_LAYOUT
- * @version   1.0
- * @package   op-unit-layout
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- * @copyright Tomoaki Nagahara All right reserved.
+ * @created    2017-02-14  Independent from NewWorld.
+ * @moved      2019-11-21  Separate to UNIT_LAYOUT trait.
+ * @moved      2024-09-04  Returned to class from trait.
+ * @updated    2024-09-04  Implemented IF_LAYOUT
+ * @version    1.0
+ * @package    op-unit-layout
+ * @author     Tomoaki Nagahara
+ * @copyright  Tomoaki Nagahara All right reserved.
  */
 class Layout implements IF_UNIT, IF_LAYOUT
 {
-	/** trait.
+	/**	trait.
 	 *
 	 */
-	/*
-	use OP_CORE, OP_UNIT, UNIT_LAYOUT {
-		UNIT_LAYOUT::__LAYOUT as Auto;
-	}
-	*/
 	use OP_CORE, OP_UNIT;
 	use \OP\OP_CI;
 
-	/** Automatically.
+	/**	Automatically.
 	 *
 	 * @created    2024-09-04
 	 */
@@ -97,7 +91,7 @@ class Layout implements IF_UNIT, IF_LAYOUT
 		Template(CompressPath($path));
 	}
 
-	/** Get/Set Layout name.
+	/**	Get/Set Layout name.
 	 *
 	 * @created   2022-09-30
 	 * @moved     2024-09-04  Return to class from trait.
