@@ -59,6 +59,8 @@ class Layout implements IF_LAYOUT
 	{
 		//	...
 		$config = Config::Get('layout');
+		$layout = $config['name'];
+		$index  = $config['controller'] ?? 'index.php';
 
 		//	...
 		if( empty($config['execute']) or 'text/html' !== OP()->MIME() ){
@@ -75,17 +77,17 @@ class Layout implements IF_LAYOUT
 		};
 
 		//	...
-		if(!file_exists( $path = $path.$config['name'] ) ){
+		if(!file_exists( $path = $path . $layout ) ){
 			throw new \Exception("Layout has not been exists: $path");
 		}
 
 		//	...
-		if(!file_exists( $path = $path.'/index.php' ) ){
+		if(!file_exists( $path = $path . "/{$index}" ) ){
 			throw new \Exception("Layout controller has not been exists: $path");
 		};
 
 		//	...
-		Template(CompressPath($path));
+		OP()->Template("asset:/layout/{$layout}/{$index}");
 	}
 
 	/**	Get/Set Layout name.
