@@ -64,7 +64,7 @@ class Layout implements IF_LAYOUT
 
 		//	...
 		if( empty($config['execute']) or 'text/html' !== OP()->MIME() ){
-			OP()->Content();
+			OP()->Unit()->App()->Content();
 			return;
 		}
 
