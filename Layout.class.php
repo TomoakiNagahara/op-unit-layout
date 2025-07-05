@@ -107,4 +107,24 @@ class Layout implements IF_LAYOUT
 		//	Get
 		return Config::Get('layout')['name'] ?? null;
 	}
+
+	/**	Get/Set layout execute flag.
+	 *
+	 * @created   2022-09-30
+	 * @param     bool       $execute
+	 * @return    bool
+	 */
+	static function Execute( bool $execute=null ) : bool
+	{
+		//	Set
+		if( $execute !== null ){
+			if(!is_bool($execute) ){
+				throw new \Exception("This value is not boolean: {$execute}");
+			}
+			Config::Set('layout',['execute'=>$execute]);
+		}
+
+		//	Get
+		return Config::Get('layout')['execute'] ?? false;
+	}
 }
