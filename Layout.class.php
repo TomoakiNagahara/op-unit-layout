@@ -93,11 +93,18 @@ class Layout implements IF_LAYOUT
 	/**	Get/Set Layout name.
 	 *
 	 * @created   2022-09-30
-	 * @moved     2024-09-04  Return to class from trait.
-	 * @return    string
+	 * @moved     2024-09-04 Return to class from trait.
+	 * @param     string     $layout_name
+	 * @return    string     $layout_name
 	 */
-	static function Name()
+	static function Name( string $name=null ) : string
 	{
+		//	Set
+		if( $name !== null ){
+			Config::Set('layout',['name'=>$name]);
+		}
+
+		//	Get
 		return Config::Get('layout')['name'] ?? null;
 	}
 }
