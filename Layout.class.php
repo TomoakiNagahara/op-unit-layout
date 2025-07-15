@@ -95,9 +95,9 @@ class Layout implements IF_LAYOUT
 	 * @created   2022-09-30
 	 * @moved     2024-09-04 Return to class from trait.
 	 * @param     string     $layout_name
-	 * @return    string     $layout_name
+	 * @return    string     $current_layout_name
 	 */
-	static function Name( string $name=null ) : string
+	static function Name( ?string $name=null ) : string
 	{
 		//	Set
 		if( $name !== null ){
